@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Flets</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-layer">
+            <div id="score">Puntuación: 0</div>
+            <div id="lives">Vidas: 3</div>
+            <div id="start-screen" class="screen">
+                <h1>SUPER FLETS</h1>
+                <p>Elige tu personaje:</p>
+                <div id="character-select">
+                    <button class="char-btn selected" data-char="obama">Obama</button>
+                    <button class="char-btn" data-char="mushroom">Mushroom</button>
+                    <button class="char-btn" data-char="trippi">Trippi</button>
+                </div>
+                <p style="margin-top: 20px; font-size: 18px;">Pulsa ESPACIO para empezar</p>
+            </div>
+            <div id="game-over-screen" class="screen hidden">
+                <h1>GAME OVER</h1>
+                <p>Pulsa ESPACIO para reiniciar</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js?v=4"></script>
+</body>
+
+</html>

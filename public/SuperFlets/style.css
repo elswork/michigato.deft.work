@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #ff0055;
+    --secondary-color: #00e5ff;
+    --bg-color: #0f0f1a;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 229, 255, 0.2);
+    border: 2px solid var(--secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#score,
+#lives {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#score {
+    left: 20px;
+    color: var(--secondary-color);
+}
+
+#lives {
+    right: 20px;
+    color: var(--primary-color);
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+    /* Permitir clicks en botones */
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 24px;
+    color: #ccc;
+}
+
+#character-select {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.char-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.char-btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.char-btn.selected {
+    background: var(--secondary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
